@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Medical Background</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Arial', sans-serif;
+       }
+
+       /*body {
+           height: 100vh;
+           background: linear-gradient(135deg, rgba(214, 51, 132, 0.9), rgba(220, 53, 69, 0.9), rgba(198, 60, 71, 0.9)),
+                       url('your-background-image.jpg') center/cover no-repeat;
+           background-blend-mode: overlay;
+           position: relative;
+         
+           overflow: hidden;
+       }*/
+
+       .background-overlay {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: url('medical-doodle-hand-drawn-illustration-vector.jpg') center/cover no-repeat;
+           opacity: 0.3;
+           z-index: 1;
+       }
+
+       .color-overlay {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: linear-gradient(135deg, #d63384 0%, #dc3545 50%, #c63c47 100%);
+           opacity: 0.85;
+           z-index: 2;
+       }
+
+       .center-logo {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           z-index: 10;
+           text-align: center;
+       }
+
+       .logo-container {
+           width: 80px;
+           height: 80px;
+           background: white;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+           margin: 0 auto 20px;
+           overflow: hidden;
+       }
+
+       .logo-image {
+           width: 50px;
+           height: 50px;
+           object-fit: contain;
+       }
+
+       .center-text {
+           color: white;
+           font-size: 28px;
+           font-weight: 300;
+           text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+           line-height: 1.2;
+       }
+
+       .subtitle {
+           font-size: 24px;
+           margin-top: 5px;
+       }
+
+       /* Floating animation for the logo */
+       .logo-container {
+           animation: float 3s ease-in-out infinite;
+       }
+
+       @keyframes float {
+           0%, 100% { transform: translateY(0px); }
+           50% { transform: translateY(-10px); }
+       }
+
+       /* Responsive design */
+       @media (max-width: 768px) {
+           .center-text {
+               font-size: 24px;
+           }
+           
+           .subtitle {
+               font-size: 20px;
+           }
+           
+           .logo-container {
+               width: 70px;
+               height: 70px;
+           }
+           
+           .logo-image {
+               width: 40px;
+               height: 40px;
+           }
+       }
+
+       /* Additional styling for better visual effect */
+       .background-pattern {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-image: 
+               radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+               radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+               radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+           background-size: 100px 100px, 150px 150px, 80px 80px;
+           z-index: 3;
+           opacity: 0.5;
+       }
+   </style>
+</head>
+<body>
+   <div class="background-overlay"></div>
+   <div class="color-overlay"></div>
+   <div class="background-pattern"></div>
+
+   <div class="center-logo">
+       <div class="logo-container">
+           <img src="th (1).jpeg" alt="Logo" class="logo-image">
+       </div>
+       <div class="center-text">
+           Readmission<br>
+           <span class="subtitle">Prediction</span>
+       </div>
+   </div>
+
+   <script>
+       // Add some interactive effects
+       document.addEventListener('DOMContentLoaded', function() {
+           const logo = document.querySelector('.logo-container');
+           const centerText = document.querySelector('.center-text');
+
+           // Add hover effect to logo
+           logo.addEventListener('mouseenter', function() {
+               this.style.transform = 'translateY(-15px) scale(1.1)';
+               this.style.transition = 'all 0.3s ease';
+           });
+
+           logo.addEventListener('mouseleave', function() {
+               this.style.transform = 'translateY(0px) scale(1)';
+           });
+
+           // Add subtle parallax effect on mouse move
+           document.addEventListener('mousemove', function(e) {
+               const x = (e.clientX / window.innerWidth) * 100;
+               const y = (e.clientY / window.innerHeight) * 100;
+               
+               document.querySelector('.background-pattern').style.transform = 
+                   `translate(${x * 0.1}px, ${y * 0.1}px)`;
+           });
+
+           // Add fade-in animation
+           setTimeout(() => {
+               logo.style.opacity = '1';
+               centerText.style.opacity = '1';
+               logo.style.transition = 'opacity 1s ease-in-out';
+               centerText.style.transition = 'opacity 1s ease-in-out 0.3s';
+           }, 100);
+
+           // Initial state for fade-in
+           logo.style.opacity = '0';
+           centerText.style.opacity = '0';
+
+           // Redirect to index.html after a delay
+           setTimeout(function() {
+               window.location.href = 'index.html'; 
+           }, 3000); // Redirect after 3 seconds (adjust as needed)
+       });
+   </script>
+</body>
+</html>
