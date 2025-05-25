@@ -34,16 +34,30 @@ Using SHAP values allows us to interpret model predictions, increasing transpare
 **Deployment & Usability:**
 Streamlit enables rapid prototyping of user-friendly interfaces, making advanced ML models accessible to clinicians and stakeholders.
 
-## Data Sources
-From the MIMIC-III database, typically the following tables or derived datasets are used:
 
-Table / File	Purpose
-admissions.csv	Admission/discharge timestamps and readmission tracking
-diagnoses_icd.csv	Identifies heart failure patients using ICD-9 codes
-patients.csv	Demographics (age, gender, ethnicity)
-labevents.csv	Clinical lab results (optional for clinical risk features)
-chartevents.csv	Vitals and bedside observations (optional)
-cleaned_file.csv	Your merged dataset for modeling
+## Screenshots
+
+![Screenshot 2025-05-25 141040](https://github.com/user-attachments/assets/926d26e9-e7f8-4abd-a414-2375dcb8c0cb)
+
+![Screenshot 2025-05-25 141156](https://github.com/user-attachments/assets/0812cfd0-42fd-411b-8529-9c0bfc9b8f65)
+
+![Screenshot 2025-05-25 143623](https://github.com/user-attachments/assets/a9660d26-51ae-4754-a3aa-570bc407c862)
+
+![Screenshot 2025-05-25 141804](https://github.com/user-attachments/assets/87e43628-d02a-4588-8a7a-cadfe22af572)
+
+![Screenshot 2025-05-25 141831](https://github.com/user-attachments/assets/5f913665-2e2e-4d9d-972b-05d6cb280cc9)
+
+![Screenshot 2025-05-25 141924](https://github.com/user-attachments/assets/c7c7828e-b60c-454c-885b-b57fe1ad86bd)
+
+![Screenshot 2025-05-25 141951](https://github.com/user-attachments/assets/2e43c5aa-15c3-4261-97e7-32d533eac55d)
+
+![Screenshot 2025-05-25 142401](https://github.com/user-attachments/assets/6020bffa-7cee-4667-ac75-b3fc6c9d4469)
+
+![Screenshot 2025-05-25 142435](https://github.com/user-attachments/assets/9934018c-f615-4991-a97f-10511fa40763)
+
+![Screenshot 2025-05-25 143203](https://github.com/user-attachments/assets/e7a100b5-f8bb-46dc-8e82-d6fdf9a95752)
+
+[Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
 
 ## 🚀 Future Optimization
 
@@ -72,30 +86,6 @@ Set up pipelines for periodic retraining and updating of the model as new data b
 
 **Scalable Deployment:**
 Containerize the application using Docker and enable cloud deployment for easier integration into real-world clinical workflows.
-
-## Screenshots
-
-![Screenshot 2025-05-25 141040](https://github.com/user-attachments/assets/926d26e9-e7f8-4abd-a414-2375dcb8c0cb)
-
-![Screenshot 2025-05-25 141156](https://github.com/user-attachments/assets/0812cfd0-42fd-411b-8529-9c0bfc9b8f65)
-
-![Screenshot 2025-05-25 143623](https://github.com/user-attachments/assets/a9660d26-51ae-4754-a3aa-570bc407c862)
-
-![Screenshot 2025-05-25 141804](https://github.com/user-attachments/assets/87e43628-d02a-4588-8a7a-cadfe22af572)
-
-![Screenshot 2025-05-25 141831](https://github.com/user-attachments/assets/5f913665-2e2e-4d9d-972b-05d6cb280cc9)
-
-![Screenshot 2025-05-25 141924](https://github.com/user-attachments/assets/c7c7828e-b60c-454c-885b-b57fe1ad86bd)
-
-![Screenshot 2025-05-25 141951](https://github.com/user-attachments/assets/2e43c5aa-15c3-4261-97e7-32d533eac55d)
-
-![Screenshot 2025-05-25 142401](https://github.com/user-attachments/assets/6020bffa-7cee-4667-ac75-b3fc6c9d4469)
-
-![Screenshot 2025-05-25 142435](https://github.com/user-attachments/assets/9934018c-f615-4991-a97f-10511fa40763)
-
-![Screenshot 2025-05-25 143203](https://github.com/user-attachments/assets/e7a100b5-f8bb-46dc-8e82-d6fdf9a95752)
-
-[Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
 
 
 **1.OBJECTIVE**
