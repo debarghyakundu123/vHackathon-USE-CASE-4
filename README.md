@@ -91,6 +91,8 @@ Containerize the application using Docker and enable cloud deployment for easier
 
 ![Screenshot 2025-05-25 142435](https://github.com/user-attachments/assets/9934018c-f615-4991-a97f-10511fa40763)
 
+![Screenshot 2025-05-25 143203](https://github.com/user-attachments/assets/e7a100b5-f8bb-46dc-8e82-d6fdf9a95752)
+
 [Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
 
 
