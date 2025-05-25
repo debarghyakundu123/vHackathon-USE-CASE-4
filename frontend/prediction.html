@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            min-height: 100vh;
+        }
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff; /* White background as in the image */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand {
+            color: #B22222; /* Red color from your existing app header */
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        .navbar-nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav a:hover {
+            color: #B22222;
+        }
+        .terabox-btn {
+            background-color: #007bff; /* Example blue, adjust as needed */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .terabox-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Adjustments to main content to account for sticky nav if needed */
+        .app-container {
+            padding-top: 0; /* Remove top padding if nav is outside */
+        }
+
+        .app-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #f0f2f6;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-right: 1px solid #e0e0e0;
+            height: fit-content;
+        }
+
+        .sidebar h2 {
+            color: #B22222;
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .input-group select,
+        .input-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .input-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.3rem;
+            font-size: 0.9rem;
+            resize: vertical;
+            height: 80px;
+        }
+
+        .predict-btn {
+            background-color: #B22222;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .predict-btn:hover {
+            background-color: #DC143C;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .app-header {
+            color: #B22222;
+            font-size: 2.5em;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-text {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .chart-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .chart-section h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .prediction-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .high-risk-box {
+            background-color: #FFEBEE;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #FFCDD2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .high-risk-box h2 {
+            color: #D32F2F;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .high-risk-box .probability {
+            background: #D32F2F;
+            color: white;
+            padding: 12px 25px;
+            display: inline-block;
+            font-size: 2.5em;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .low-risk-box {
+            background-color: #E8F5E9;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #C8E6C9;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .low-risk-box h2 {
+            color: #388E3C;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .low-risk-box .probability {
+            background: #388E3C;
+            color: white;
+            padding: 12px 25px;
+            display: inline-block;
+            font-size: 2.5em;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .patient-data {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .action-buttons {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .download-btn, .email-btn {
+            background-color: #B22222;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .download-btn:hover, .email-btn:hover {
+            background-color: #DC143C;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+        <div class="navbar-brand">HealthPredict</div>
+        <ul class="navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://readmissionsprediction.netlify.app/splashs.html#features">Features</a></li>
+            <li><a href="https://readmissionsprediction.netlify.app/splashs.html#stats">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>🩺 Patient Admission Details</h2>
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Fill all the fields below and click Predict to see results ➡️</p>
+            
+            <div class="input-group">
+                <label for="pastSymptoms">Patient's Past Symptoms When Admitted</label>
+                <textarea id="pastSymptoms" placeholder="Enter past symptoms (e.g., fever, chest pain, cough, fatigue, etc.)"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="admissionType">Admission Type</label>
+                <select id="admissionType">
+                    <option value="Emergency">Emergency</option>
+                    <option value="Elective">Elective</option>
+                    <option value="Urgent">Urgent</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="insurance">Insurance Provider</label>
+                <select id="insurance">
+                    <option value="Medicare">Medicare</option>
+                    <option value="Medicaid">Medicaid</option>
+                    <option value="Private">Private</option>
+                    <option value="Self Pay">Self Pay</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="maritalStatus">Marital Status</label>
+                <select id="maritalStatus">
+                    <option value="MARRIED">Married</option>
+                    <option value="SINGLE">Single</option>
+                    <option value="DIVORCED">Divorced</option>
+                    <option value="WIDOWED">Widowed</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="ethnicity">Ethnicity / Race</label>
+                <select id="ethnicity">
+                    <option value="WHITE">White</option>
+                    <option value="BLACK">Black</option>
+                    <option value="HISPANIC">Hispanic</option>
+                    <option value="ASIAN">Asian</option>
+                    <option value="OTHER">Other</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="lengthOfStay">Anticipated Length of Stay (days)</label>
+                <input type="number" id="lengthOfStay" min="0" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="numDiagnoses">Number of Diagnoses</label>
+                <input type="number" id="numDiagnoses" min="0" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="avgLabValue">Average Laboratory Value</label>
+                <input type="number" id="avgLabValue" min="0" value="0" step="0.1">
+            </div>
+            
+            <div class="input-group">
+                <label for="numLabEvents">Number of Lab Tests</label>
+                <input type="number" id="numLabEvents" min="0" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="numProcedures">Number of Procedures</label>
+                <input type="number" id="numProcedures" min="0" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="numCptEvents">Number of Billed Procedures (CPT Codes)</label>
+                <input type="number" id="numCptEvents" min="0" value="0" step="1">
+            </div>
+            
+            <div class="input-group">
+                <label for="drgCode">DRG Code (Diagnosis-Related Group)</label>
+                <input type="number" id="drgCode" min="0" value="0" step="1">
+            </div>
+            
+            <button class="predict-btn" onclick="predictHeartFailure()">🚑 Predict Heart Failure</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1 class="app-header">🫀 Heart Failure Prediction App</h1>
+            <p class="welcome-text">Fill in the sidebar and see your patient's profile and prediction here.</p>
+            
+            <div class="content-grid">
+                <!-- Patient Profile Chart -->
+                <div class="chart-section">
+                    <h3>📊 Patient Profile Chart</h3>
+                    <div class="chart-container">
+                        <canvas id="radarChart" width="300" height="300"></canvas>
+                    </div>
+                    
+                    <h4 style="margin-top: 1.5rem;">📝 Your Entered Parameters</h4>
+                    <div id="patientData" class="patient-data"></div>
+                </div>
+                
+                <!-- Prediction Result -->
+                <div class="prediction-section">
+                    <h3>🔍 Prediction Result</h3>
+                    
+                    <div id="highRiskResult" class="high-risk-box">
+                        <h2>⚠️ High Risk: Heart Failure Likely</h2>
+                        <div class="probability">Probability: <span id="highRiskProb">85%</span></div>
+                    </div>
+                    
+                    <div id="lowRiskResult" class="low-risk-box">
+                        <h2>✅ Low Risk: Heart Failure Unlikely</h2>
+                        <div class="probability">Probability: <span id="lowRiskProb">15%</span></div>
+                    </div>
+                    
+                    <div id="actionButtons" class="action-buttons">
+                        <button class="download-btn">⬇️ Download AI-Generated Report (PDF)</button>
+                        <button class="email-btn">📧 Send Report by Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let chart;
+
+        // Initialize chart on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeChart();
+            updatePatientData();
+            
+            // Add event listeners for real-time updates
+            const inputs = document.querySelectorAll('input[type="number"], select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    updateChart();
+                    updatePatientData();
+                });
+            });
+        });
+
+        function initializeChart() {
+            const ctx = document.getElementById('radarChart').getContext('2d');
+            
+            chart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Length of Stay',
+                        'Number of Diagnoses',
+                        'Average Lab Value',
+                        'Number of Lab Tests',
+                        'Number of Procedures',
+                        'Number of CPT Events',
+                        'DRG Code'
+                    ],
+                    datasets: [{
+                        label: 'Patient Profile',
+                        data: [0, 0, 0, 0, 0, 0, 0],
+                        backgroundColor: 'rgba(178, 34, 34, 0.2)',
+                        borderColor: '#B22222',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#B22222',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#B22222'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'lightgrey'
+                            },
+                            grid: {
+                                color: 'lightgrey'
+                            },
+                            pointLabels: {
+                                color: 'grey',
+                                font: {
+                                    size: 10
+                                }
+                            },
+                            ticks: {
+                                color: 'grey'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChart() {
+            const data = [
+                parseFloat(document.getElementById('lengthOfStay').value) || 0,
+                parseFloat(document.getElementById('numDiagnoses').value) || 0,
+                parseFloat(document.getElementById('avgLabValue').value) || 0,
+                parseFloat(document.getElementById('numLabEvents').value) || 0,
+                parseFloat(document.getElementById('numProcedures').value) || 0,
+                parseFloat(document.getElementById('numCptEvents').value) || 0,
+                parseFloat(document.getElementById('drgCode').value) || 0
+            ];
+            
+            chart.data.datasets[0].data = data;
+            chart.update();
+        }
+
+        function updatePatientData() {
+            const data = {
+                'Past Symptoms': document.getElementById('pastSymptoms').value || 'Not provided',
+                'Admission Type': document.getElementById('admissionType').value,
+                'Insurance Provider': document.getElementById('insurance').value,
+                'Marital Status': document.getElementById('maritalStatus').value,
+                'Ethnicity / Race': document.getElementById('ethnicity').value,
+                'Length of Stay': document.getElementById('lengthOfStay').value + ' days',
+                'Number of Diagnoses': document.getElementById('numDiagnoses').value,
+                'Average Laboratory Value': document.getElementById('avgLabValue').value,
+                'Number of Lab Tests': document.getElementById('numLabEvents').value,
+                'Number of Procedures': document.getElementById('numProcedures').value,
+                'Number of CPT Events': document.getElementById('numCptEvents').value,
+                'DRG Code': document.getElementById('drgCode').value
+            };
+            
+            const container = document.getElementById('patientData');
+            container.innerHTML = '';
+            
+            for (const [key, value] of Object.entries(data)) {
+                const row = document.createElement('div');
+                row.className = 'data-row';
+                row.innerHTML = `
+                    <strong>${key}:</strong>
+                    <span>${value}</span>
+                `;
+                container.appendChild(row);
+            }
+        }
+
+        function predictHeartFailure() {
+            updateChart();
+            updatePatientData();
+            
+            // Simulate prediction logic
+            const symptoms = document.getElementById('pastSymptoms').value.toLowerCase();
+            const highRiskSymptoms = ['chest pain', 'shortness of breath', 'hemoptysis', 'syncope', 'palpitations', 'edema'];
+            const hasHighRiskSymptoms = highRiskSymptoms.some(symptom => symptoms.includes(symptom));
+            
+            // Calculate risk based on inputs
+            const numDiagnoses = parseInt(document.getElementById('numDiagnoses').value) || 0;
+            const lengthOfStay = parseInt(document.getElementById('lengthOfStay').value) || 0;
+            const numProcedures = parseInt(document.getElementById('numProcedures').value) || 0;
+            
+            const riskScore = (numDiagnoses * 0.1) + (lengthOfStay * 0.05) + (numProcedures * 0.15);
+            const isHighRisk = hasHighRiskSymptoms || riskScore > 1.0;
+            
+            // Hide both result boxes first
+            document.getElementById('highRiskResult').style.display = 'none';
+            document.getElementById('lowRiskResult').style.display = 'none';
+            document.getElementById('actionButtons').style.display = 'none';
+            
+            if (isHighRisk) {
+                const probability = Math.min(85 + (riskScore * 10), 95);
+                document.getElementById('highRiskProb').textContent = probability.toFixed(0) + '%';
+                document.getElementById('highRiskResult').style.display = 'block';
+                document.getElementById('actionButtons').style.display = 'block';
+            } else {
+                const probability = Math.max(15 - (riskScore * 5), 5);
+                document.getElementById('lowRiskProb').textContent = probability.toFixed(0) + '%';
+                document.getElementById('lowRiskResult').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

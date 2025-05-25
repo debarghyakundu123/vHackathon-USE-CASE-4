@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction App</title>
+    <link rel="stylesheet" href="details.css" />
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo">HealthPredict</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://readmissionsprediction.netlify.app/splashs.html#features">Features</a></li>
+            <li><a href="https://readmissionsprediction.netlify.app/splashs.html#stats">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="app-header">
+            <h1 class="welcome-title">Please enter your details below to get started.</h1>
+        </div>
+
+        <div class="hero-section">
+            <!-- Left Image Container -->
+            <div class="image-container">
+                <img src="Health professional team-pana.png" alt="Left Image" class="hero-image">
+            </div>
+
+            <!-- Center Form Container -->
+            <div class="form-section">
+                <form id="detailsForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="btn">
+                        <button type="submit" class="continue-btn">Continue</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Image Container -->
+            <div class="image-container">
+                <img src="Online Doctor-amico (1).png" alt="Right Image" class="hero-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Made with <span class="heart">♥</span> for better healthcare</p>
+    </div>
+
+    <script>
+        // Enhanced form validation with better UX
+        document.getElementById('detailsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const inputs = this.querySelectorAll('input[required]');
+            let isValid = true;
+            
+            // Reset previous error states
+            inputs.forEach(input => {
+                input.style.borderColor = '#ced4da';
+                input.style.transform = 'translateY(0)';
+            });
+            
+            // Validate each field
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#dc3545';
+                    input.style.transform = 'translateY(0)';
+                    
+                    // Add shake animation
+                    input.style.animation = 'shake 0.5s ease-in-out';
+                    setTimeout(() => {
+                        input.style.animation = '';
+                    }, 500);
+                }
+            });
+            
+            // Email validation
+            const emailInput = document.getElementById('emailAddress');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput.value && !emailRegex.test(emailInput.value)) {
+                isValid = false;
+                emailInput.style.borderColor = '#dc3545';
+            }
+            
+            // Phone validation (basic)
+            const phoneInput = document.getElementById('phoneNumber');
+            const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+            if (phoneInput.value && !phoneRegex.test(phoneInput.value)) {
+                isValid = false;
+                phoneInput.style.borderColor = '#dc3545';
+            }
+            
+            if (isValid) {
+                const btn = this.querySelector('.continue-btn');
+                const originalText = btn.textContent;
+                
+                btn.textContent = 'Processing...';
+                btn.disabled = true;
+                btn.style.background = 'linear-gradient(45deg, #6c757d, #adb5bd)';
+                
+                // Simulate processing
+                setTimeout(() => {
+                    btn.textContent = '✓ Success!';
+                    btn.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
+                }, 2000);
+                if (isValid) {
+    const btn = this.querySelector('.continue-btn');
+    const originalText = btn.textContent;
+    
+    btn.textContent = 'Processing...';
+    btn.disabled = true;
+    btn.style.background = 'linear-gradient(45deg, #6c757d, #adb5bd)';
+    
+    // Simulate processing
+    setTimeout(() => {
+        btn.textContent = '✓ Success!';
+        btn.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
+        
+        setTimeout(() => {
+            // Redirect to next page
+            window.location.href = 'prediction.html'; // Replace with your actual next page URL
+        }, 1000);
+    }, 2000);
+}
+            }
+        });
+        
+        // Add CSS for shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+            
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Add floating animations to images
+        const images = document.querySelectorAll('.hero-image');
+        images.forEach((img, index) => {
+            img.style.animation = `float ${3 + index * 0.5}s ease-in-out infinite`;
+        });
+    </script>
+</body>
+</html>
