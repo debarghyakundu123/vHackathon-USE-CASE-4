@@ -9,16 +9,23 @@ import base64
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
 
-import groq
+from groq import Client
+from dotenv import load_dotenv
+import os
 
+# Load environment variables
+load_dotenv()
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 
-# --- 1. Page configuration (must be first Streamlit command) ---
+# Streamlit page setup
 st.set_page_config(
     page_title="Heart Failure Prediction App",
     page_icon="🫀",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
 
 
 st.markdown("""
@@ -57,7 +64,7 @@ st.markdown("""
         }
     </style>
     <nav class="navbar" id="navbar">
-        <div class="logo">ReAdmitIQ</div>
+        <div class="logo">HealthPredict</div>
         <ul class="nav-links">
             <li><a href="https://readmissionsprediction.netlify.app/">Home</a></li>
             <li><a href="https://readmissionsprediction.netlify.app/splashs.html#features">Features</a></li>
@@ -217,8 +224,10 @@ with col1:
     st.markdown("#### 📝 Your Entered Parameters")
     st.dataframe(pd.DataFrame([user_input]).T.astype(str), use_container_width=True)
 
+
+
 def generate_ai_report(user_input):
-    client = groq.Client(api_key="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")
+    client = Client(api_key=GROQ_API_KEY)
     prompt = (
         f"Welcome. Please generate a formal, precise, and empathetic heart failure risk report for the following patient.\n\n"
         f"Patient Name: {st.session_state['user_name']}\n"
@@ -259,7 +268,11 @@ def report_to_pdf(report_text):
     return pdf.output(dest='S').encode('latin1', errors='replace')
 
 def send_email_sendgrid(pdf_content=None):
-    sg_api_key = "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"
+    sg_api_key = os.getenv("SENDGRID_API_KEY")
+    if not sg_api_key:
+        st.error("SendGrid API key is not set in the environment variables.")
+        return
+    
     from_email = "debarghyakundu319@gmail.com"  # Must be verified in SendGrid
     recipient_email = st.session_state["user_email"]
 
