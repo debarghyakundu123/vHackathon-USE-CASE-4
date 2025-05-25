@@ -10,7 +10,7 @@ The submission is made by students of Maharaja Surajmal Institute of Technology,
 
 **website demo  = https://readmissionsprediction.netlify.app/splashs.html**
 
-## ✨ Key Features
+##  Key Features
 
 1. Personalized AI-Generated Risk Reports
 Uses the latest LLM (Groq/LLAMA-3) to generate a custom, empathetic, and actionable report for each patient.
