@@ -1,4 +1,12 @@
 ## Project Documentation: Predicting 30-Day Hospital Readmission Using Random Forest
+## Readmission Prediction
+
+
+
+This project is an AI-powered heart failure prediction system designed for proactive patient care.
+It analyzes clinical and demographic data to accurately assess each patient’s risk of heart failure or readmission.By enabling early intervention, this tool aims to reduce hospitalizations and improve long-term heart health outcomes.
+
+
 
 **live demo  = https://readmissionpredictionforheartfailurepatients.streamlit.app/**
 
