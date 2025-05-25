@@ -30,9 +30,9 @@ Clean, responsive Streamlit UI with a welcoming home page, intuitive bar for dat
 6. Automated Personalized Email Alert for Heart Failure Risk
 If heart failure risk is detected, the patient automatically receives a personalized email with their health report and tailored recommendations. This proactive alert empowers timely action before hospital admission.
 
-## DEMO VIDEO
+## Demo Video
 
-## DATA MODEL
+## Data Model
 
 <img src="https://github.com/user-attachments/assets/ceedcdbc-61f9-4b42-84d6-8152ad3a368d" width="400"/>
 
@@ -70,7 +70,7 @@ Using SHAP values allows us to interpret model predictions, increasing transpare
 Streamlit enables rapid prototyping of user-friendly interfaces, making advanced ML models accessible to clinicians and stakeholders.
 
 
-## Testing & Screenshots
+## Screenshots
 
 ![Screenshot 2025-05-25 141040](https://github.com/user-attachments/assets/926d26e9-e7f8-4abd-a414-2375dcb8c0cb)
 
