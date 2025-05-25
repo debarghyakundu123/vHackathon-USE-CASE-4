@@ -6,3 +6,4 @@ matplotlib
 fpdf
 sendgrid
 groq
+python-dotenv
