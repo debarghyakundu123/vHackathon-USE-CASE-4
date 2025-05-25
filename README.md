@@ -30,6 +30,8 @@ Clean, responsive Streamlit UI with a welcoming home page, intuitive bar for dat
 6. Automated Personalized Email Alert for Heart Failure Risk
 If heart failure risk is detected, the patient automatically receives a personalized email with their health report and tailored recommendations. This proactive alert empowers timely action before hospital admission.
 
+## DEMO VIDEO
+
 ## DATA MODEL
 
 <img src="https://github.com/user-attachments/assets/ceedcdbc-61f9-4b42-84d6-8152ad3a368d" width="400"/>
