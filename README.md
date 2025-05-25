@@ -139,13 +139,21 @@ Set up pipelines for periodic retraining and updating of the model as new data b
 
 ##  Testing 
 
-<img src="https://github.com/user-attachments/assets/b177f126-6f01-4208-a59d-692a26f37487" width="200"/> **Home page loads correctly= Status Pass
+<img src="https://github.com/user-attachments/assets/b177f126-6f01-4208-a59d-692a26f37487" width="200"/> 
 
-<img src="https://github.com/user-attachments/assets/3583f9c4-a2cb-48da-bc77-166e1e33e914" width="200"/> **Form validation page loads correctly** = ✅ **Status: Pass**
+**Home page loads correctly= Status Pass
 
-<img src="https://github.com/user-attachments/assets/4494fbd4-a8f5-4871-8a1b-efa0d4181bcf" width="200"/> <img src="https://github.com/user-attachments/assets/a7bfb3c6-b3fa-4a52-aa30-d43cd7d97013" width="200"/> **Automated Unit Test Case 1 - Testing Model Deployment** = ✅ **Status: Pass**
+<img src="https://github.com/user-attachments/assets/3583f9c4-a2cb-48da-bc77-166e1e33e914" width="200"/>
 
-<img src="https://github.com/user-attachments/assets/9c4ad07e-d4a1-4c6c-9925-99b25c3bb34d" width="200"/> <img src="https://github.com/user-attachments/assets/9e9ed6e7-3f16-4c5c-89a1-17a8bc633698" width="200"/> **Automated Unit Test Case 2 - Testing Model Features** = ✅ **Status: Pass**
+**Form validation page loads correctly** = ✅ **Status: Pass**
+
+<img src="https://github.com/user-attachments/assets/4494fbd4-a8f5-4871-8a1b-efa0d4181bcf" width="200"/> <img src="https://github.com/user-attachments/assets/a7bfb3c6-b3fa-4a52-aa30-d43cd7d97013" width="200"/> 
+
+**Automated Unit Test Case 1 - Testing Model Deployment** = ✅ **Status: Pass**
+
+<img src="https://github.com/user-attachments/assets/9c4ad07e-d4a1-4c6c-9925-99b25c3bb34d" width="200"/> <img src="https://github.com/user-attachments/assets/9e9ed6e7-3f16-4c5c-89a1-17a8bc633698" width="200"/> 
+
+**Automated Unit Test Case 2 - Testing Model Features** = ✅ **Status: Pass**
 
 
 ## Authors
