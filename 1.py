@@ -259,6 +259,9 @@ def report_to_pdf(report_text):
         pdf.multi_cell(0, 10, line)
     return pdf.output(dest='S').encode('latin1', errors='replace')
 
+
+sendgrid_api_key = st.secrets["SENDGRID_API_KEY"]
+
 def send_email_sendgrid(pdf_content=None):
     from sendgrid import SendGridAPIClient
     from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
