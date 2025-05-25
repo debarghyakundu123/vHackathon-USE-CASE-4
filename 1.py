@@ -11,16 +11,13 @@ from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileT
 
 import groq
 
-
 # --- 1. Page configuration (must be first Streamlit command) ---
 st.set_page_config(
     page_title="Heart Failure Prediction App",
     page_icon="🫀",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
-
-
 st.markdown("""
     <style>
         .navbar {
@@ -68,17 +65,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
-# Add this wrapper to your main content to prevent it from hiding under the navbar
-st.markdown('<div class="main-content">', unsafe_allow_html=True)
-
-
-
-# Close the wrapper div at the end of your script if you want
-st.markdown('</div>', unsafe_allow_html=True)
-
-
-
 # --- 2. Initialize session state variables ---
 if "user_info_submitted" not in st.session_state:
     st.session_state["user_info_submitted"] = False
@@ -91,9 +77,11 @@ if "user_email" not in st.session_state:
 
 # --- 3. Only show home page form if not submitted ---
 if not st.session_state["user_info_submitted"]:
+    # Centered logo at the top
+    st.image("1.jpeg", width=150)
 
     # Beautiful header and subtitle
-    st.markdown("<h1 style='text-align: center; color: #B22222;'>🫀 Please enter your details below to get started.</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #B22222;'>🫀 Welcome to the Heart Failure Prediction App</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <p style='text-align: center; font-size:18px; color: #555;'>
@@ -108,7 +96,7 @@ if not st.session_state["user_info_submitted"]:
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col1:
-        st.image("Health professional team-pana.png", caption="Your Heart Specialist", width=450)
+        st.image("dr.jpg", caption="Your Heart Specialist", use_container_width=True)
 
     with col2:
         with st.form("user_info_form"):
@@ -128,9 +116,9 @@ if not st.session_state["user_info_submitted"]:
                 st.success(f"Thanks, {name}! Please proceed to the next page.")
 
     with col3:
-        st.image("Online Doctor-amico (1).png", caption="Your Heart Specialist", width=450)
+        st.empty()  # For symmetry
 
-   # Optional: Add a stylish footer
+    # Optional: Add a stylish footer
     st.markdown(
         """
         <div style='text-align:center; margin-top: 3rem; color: #888; font-size: 14px;'>
