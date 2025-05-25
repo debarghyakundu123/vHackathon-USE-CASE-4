@@ -21,6 +21,62 @@ st.set_page_config(
 )
 
 
+st.markdown("""
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8f8f8;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #b22222;  /* Firebrick red */
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <nav class="navbar" id="navbar">
+        <div class="logo">HealthPredict</div>
+        <ul class="nav-links">
+            <li><a href="https://readmissionsprediction.netlify.app/">Home</a></li>
+            <li><a href="https://readmissionsprediction.netlify.app/splashs.html#features">Features</a></li>
+            <li><a href="https://readmissionsprediction.netlify.app/splashs.html#stats">About</a></li>
+            <li><a href="https://readmissionsprediction.netlify.app/contact">Contact</a></li>
+        </ul>
+    </nav>
+""", unsafe_allow_html=True)
+
+
+
+# Add this wrapper to your main content to prevent it from hiding under the navbar
+st.markdown('<div class="main-content">', unsafe_allow_html=True)
+
+
+
+# Close the wrapper div at the end of your script if you want
+st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 # --- 2. Initialize session state variables ---
