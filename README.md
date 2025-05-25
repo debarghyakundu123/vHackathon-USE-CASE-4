@@ -34,7 +34,7 @@ If heart failure risk is detected, the patient automatically receives a personal
 
 ## DATA MODEL
 
-![image](https://github.com/user-attachments/assets/ceedcdbc-61f9-4b42-84d6-8152ad3a368d)
+<img src="https://github.com/user-attachments/assets/ceedcdbc-61f9-4b42-84d6-8152ad3a368d" width="400"/>
 
 ## TECH STACK
 | **Layer**              | **Tools/Libraries**                         |
