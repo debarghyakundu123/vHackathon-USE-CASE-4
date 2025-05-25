@@ -9,7 +9,8 @@ This project is developed as part of the Veersa Technologies Hackathon competiti
 The submission is made by students of Maharaja Surajmal Institute of Technology, New Delhi.
 
 **website demo  = https://readmissionsprediction.netlify.app/splashs.html**
-**Figma = https://www.figma.com/design/SFVMFDZNvN2GHqP2bxlbHV/Untitled?node-id=0-1&t=NSEmTkBJpVTccQaZ-1 **
+
+- Figma Design: https://www.figma.com/design/SFVMFDZNvN2GHqP2bxlbHV/Untitled?node-id=0-1&t=NSEmTkBJpVTccQaZ-1
 
 ##  Key Features
 
