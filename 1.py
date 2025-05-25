@@ -50,7 +50,7 @@ if not st.session_state["user_info_submitted"]:
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col1:
-        st.image("dr.jpg", caption="Your Heart Specialist", use_column_width=True)
+        st.image("dr.jpg", caption="Your Heart Specialist", use_container_width=True)
 
     with col2:
         with st.form("user_info_form"):
