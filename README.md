@@ -125,7 +125,7 @@ Set up pipelines for periodic retraining and updating of the model as new data b
 
 ## Authors
 
-- [@Debarghya Kundu]([https://github.com/huhrsh](https://github.com/debarghyakundu123))
+- [@Debarghya Kundu](https://github.com/debarghyakundu123))
 - [@Anushka Punia](https://github.com/anushkapunia)
 - [@Ojas Kumar](https://github.com/OjasKumar83)
 - [@Ridhaan Garg](https://github.com/ridhaan7)
