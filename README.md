@@ -1,10 +1,10 @@
- Project Documentation: Predicting 30-Day Hospital Readmission Using Random Forest
+**Project Documentation: Predicting 30-Day Hospital Readmission Using Random Forest**
 live demo  = https://readmissionpredictionforheartfailurepatients.streamlit.app/
 website demo  = https://readmissionsprediction.netlify.app/splashs.html
-🧠 Objective
+**OBJECTIVE**
 To build a machine learning model using Random Forest to predict whether a patient will be readmitted within 30 days of discharge, based on historical admission and diagnosis data.
-Key Fetaures:
-📁 Data Sources
+**Key Fetaures:**
+**📁Data Sources**
 Admissions Data (admissions.csv)
 
 Contains subject_id, hadm_id, admittime, dischtime, etc.
