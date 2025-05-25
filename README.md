@@ -5,29 +5,24 @@
 **website demo  = https://readmissionsprediction.netlify.app/splashs.html**
 
 ## ✨ Key Features
-**End-to-End Pipeline:**
-Seamlessly integrates data extraction, preprocessing, feature engineering, model training, and deployment.
 
-**Interactive Web Interface:**
-Users can easily input patient data through a user-friendly sidebar and receive instant predictions.
+1. Personalized AI-Generated Risk Reports
+Uses the latest LLM (Groq/LLAMA-3) to generate a custom, empathetic, and actionable report for each patient.
 
-**Real-Time Readmission Prediction:**
-Provides immediate 30-day readmission risk and probability score based on entered clinical and demographic features.
+2. One-Click PDF Generation and Email Delivery
+Instantly converts the AI report into a professional PDF.
 
-**Visual Feedback:**
-Displays radar charts for feature profiles and SHAP plots to explain prediction drivers, supporting transparency and trust.
+3. Dynamic Patient Profile Visualization
+Automatically creates a radar chart of patient clinical parameters, giving a visual summary of risk factors at a glance.
 
-**Robust Machine Learning Models:**
-Utilizes advanced algorithms (XGBoost) and supports future extensibility.
+4. Smart Symptom Integration
+Accepts free-text symptoms and automatically flags high-risk symptoms (like chest pain, syncope, hemoptysis) to ensure no critical warning is missed—even if the model is uncertain.
 
-**Input Validation & Guidance:**
-Ensures all required fields are completed, with tooltips and brief descriptions to assist users.
+5. Modern, User-Friendly Interface
+Clean, responsive Streamlit UI with a welcoming home page, intuitive bar for data entry, and clear separation between patient info and prediction results.
 
-**Reusable Artifacts:**
-Saves trained models, encoders, and scalers for consistent and efficient inference.
-
-**Responsive & Accessible:**
-Designed for use across devices, making it practical for clinicians and stakeholders in various settings.
+6. Automated Personalized Email Alert for Heart Failure Risk
+If heart failure risk is detected, the patient automatically receives a personalized email with their health report and tailored recommendations. This proactive alert empowers timely action before hospital admission.
 
 ## DATA MODEL
 
