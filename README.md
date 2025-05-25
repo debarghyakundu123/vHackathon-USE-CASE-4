@@ -36,7 +36,7 @@ If heart failure risk is detected, the patient automatically receives a personal
 
 <img src="https://github.com/user-attachments/assets/ceedcdbc-61f9-4b42-84d6-8152ad3a368d" width="400"/>
 
-## TECH STACK
+## Tech Stack
 | **Layer**              | **Tools/Libraries**                         |
 |------------------------|---------------------------------------------|
 | Data Source            | MIMIC-III (PostgreSQL/CSV)                  |
