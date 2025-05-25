@@ -57,7 +57,7 @@ st.markdown("""
         }
     </style>
     <nav class="navbar" id="navbar">
-        <div class="logo">HealthPredict</div>
+        <div class="logo">ReAdmitIQ</div>
         <ul class="nav-links">
             <li><a href="https://readmissionsprediction.netlify.app/">Home</a></li>
             <li><a href="https://readmissionsprediction.netlify.app/splashs.html#features">Features</a></li>
