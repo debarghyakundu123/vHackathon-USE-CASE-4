@@ -79,6 +79,8 @@ Containerize the application using Docker and enable cloud deployment for easier
 
 ![Screenshot 2025-05-25 141156](https://github.com/user-attachments/assets/0812cfd0-42fd-411b-8529-9c0bfc9b8f65)
 
+![Screenshot 2025-05-25 143623](https://github.com/user-attachments/assets/a9660d26-51ae-4754-a3aa-570bc407c862)
+
 ![Screenshot 2025-05-25 141804](https://github.com/user-attachments/assets/87e43628-d02a-4588-8a7a-cadfe22af572)
 
 ![Screenshot 2025-05-25 141831](https://github.com/user-attachments/assets/5f913665-2e2e-4d9d-972b-05d6cb280cc9)
