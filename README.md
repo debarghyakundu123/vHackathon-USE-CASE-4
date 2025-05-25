@@ -41,7 +41,7 @@ If heart failure risk is detected, the patient automatically receives a personal
 |------------------------|---------------------------------------------|
 | Data Source            | MIMIC-III (PostgreSQL/CSV)                  |
 | Data Processing        | Python, pandas, numpy                       |
-| ML Modeling            | scikit-learn, XGBoost, joblib               |
+| ML Modeling            | scikit-learn, Random-Forest, joblib         |
 | Explainability         | SHAP                                        |
 | Visualization          | matplotlib, seaborn, plotly                 |
 | Web App                | Streamlit                                   |
