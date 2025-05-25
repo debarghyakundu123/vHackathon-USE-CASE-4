@@ -8,8 +8,6 @@ It analyzes clinical and demographic data to accurately assess each patient’s 
 This project is developed as part of the Veersa Technologies Hackathon competition with the aim of transforming healthcare through technological innovation. 
 The submission is made by students of Maharaja Surajmal Institute of Technology, New Delhi.
 
-**live demo  = https://readmissionpredictionforheartfailurepatients.streamlit.app/**
-
 **website demo  = https://readmissionsprediction.netlify.app/splashs.html**
 
 ## ✨ Key Features
