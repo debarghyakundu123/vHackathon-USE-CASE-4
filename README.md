@@ -89,10 +89,10 @@ Streamlit enables rapid prototyping of user-friendly interfaces, making advanced
 To further enhance the accuracy, usability, and impact of this heart failure readmission prediction project, we have identified several promising directions for future optimization:
 
 **Feature Expansion:**
-Integrate additional clinical variables such as medication history, imaging results, and physician notes using natural language processing (NLP) to capture more nuanced patient information.
+- Integrate additional clinical variables such as medication history, imaging results, and physician notes using natural language processing (NLP) to capture more nuanced patient information.
 
 **Temporal Modeling:**
-Explore sequential or time-series models (e.g., LSTM, GRU) to better leverage patient history and trends over multiple admissions.
+- Explore sequential or time-series models (e.g., LSTM, GRU) to better leverage patient history and trends over multiple admissions.
 
 **Automated Hyperparameter Tuning:**
 Implement advanced optimization techniques (e.g., Bayesian optimization, Optuna) to systematically search for the best model parameters.
