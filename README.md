@@ -16,21 +16,21 @@ To build a machine learning model using Random Forest to predict whether a patie
 
 The following data files were used:
 
-admissions – Contains admission and discharge details.
+**admissions** – Contains admission and discharge details.
 
-diagnoses – Contains ICD9 diagnosis codes.
+**diagnoses** – Contains ICD9 diagnosis codes.
 
-drgs – Diagnosis-Related Group codes.
+**drgs** – Diagnosis-Related Group codes.
 
-cptevents – CPT procedure events.
+**cptevents** – CPT procedure events.
 
-labevents – Laboratory test results.
+**labevents** – Laboratory test results.
 
-labitems – Details about lab tests.
+**labitems** – Details about lab tests.
 
-patients – Demographics like age, marital status, etc.
+**patients** – Demographics like age, marital status, etc.
 
-procedures_icd – ICD procedure codes.
+**procedures_icd** – ICD procedure codes.
 
 
 **3. Heart Failure Identification**
@@ -82,7 +82,7 @@ Label Encoding: Categorical variables like insurance, ethnicity, etc., were enco
 Scaling: Numerical features were standardized using StandardScaler.
 
 
-**  6. Model Training: Random Forest**
+**6. Model Training: Random Forest**
 
 A RandomForestClassifier from scikit-learn was trained on the processed data:
 
