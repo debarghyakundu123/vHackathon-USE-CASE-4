@@ -16,7 +16,7 @@ st.set_page_config(
     page_title="Heart Failure Prediction App",
     page_icon="🫀",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="expanded"
 )
 
 # --- 2. Initialize session state variables ---
