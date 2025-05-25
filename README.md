@@ -73,7 +73,31 @@ Set up pipelines for periodic retraining and updating of the model as new data b
 **Scalable Deployment:**
 Containerize the application using Docker and enable cloud deployment for easier integration into real-world clinical workflows.
 
+## Screenshots
+
+![Screenshot 2025-05-25 141040](https://github.com/user-attachments/assets/926d26e9-e7f8-4abd-a414-2375dcb8c0cb)
+
+![Screenshot 2025-05-25 141156](https://github.com/user-attachments/assets/0812cfd0-42fd-411b-8529-9c0bfc9b8f65)
+
+![Screenshot 2025-05-25 141804](https://github.com/user-attachments/assets/87e43628-d02a-4588-8a7a-cadfe22af572)
+
+![Screenshot 2025-05-25 141831](https://github.com/user-attachments/assets/5f913665-2e2e-4d9d-972b-05d6cb280cc9)
+
+![Screenshot 2025-05-25 141924](https://github.com/user-attachments/assets/c7c7828e-b60c-454c-885b-b57fe1ad86bd)
+
+![Screenshot 2025-05-25 141951](https://github.com/user-attachments/assets/2e43c5aa-15c3-4261-97e7-32d533eac55d)
+
+![Screenshot 2025-05-25 142401](https://github.com/user-attachments/assets/6020bffa-7cee-4667-ac75-b3fc6c9d4469)
+
+![Screenshot 2025-05-25 142435](https://github.com/user-attachments/assets/9934018c-f615-4991-a97f-10511fa40763)
+
+[Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
+
+
 **1.OBJECTIVE**
+
+
+
 To build a machine learning model using Random Forest to predict whether a patient will be readmitted within 30 days of discharge, using a variety of features derived from hospital admission records, lab events, diagnoses, procedures, and demographic data.
 
 
