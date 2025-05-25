@@ -10,6 +10,7 @@ The submission is made by students of Maharaja Surajmal Institute of Technology,
 
 **website demo  = https://readmissionsprediction.netlify.app/splashs.html**
 
+
 ##  Key Features
 
 1. Personalized AI-Generated Risk Reports
@@ -31,6 +32,8 @@ Clean, responsive Streamlit UI with a welcoming home page, intuitive bar for dat
 If heart failure risk is detected, the patient automatically receives a personalized email with their health report and tailored recommendations. This proactive alert empowers timely action before hospital admission.
 
 ## Demo Video
+
+https://drive.google.com/file/d/1VL6-x7E7qanM1jqJdHg4bXH2LTdEJ01H/view?usp=sharing
 
 ## Data Model
 
