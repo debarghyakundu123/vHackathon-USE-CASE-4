@@ -94,8 +94,17 @@ Streamlit enables rapid prototyping of user-friendly interfaces, making advanced
 
 ![noHeartAttackPred](https://github.com/user-attachments/assets/d7ac541f-0152-448c-990e-5f102d9f1aa9)
 
+![heartAttack1](https://github.com/user-attachments/assets/0ca68950-509d-4704-84de-47391bd4045d)
 
+![heartAttack2](https://github.com/user-attachments/assets/0769293c-36d2-4d7c-b487-355fbb1fa0da)
 
+![heartAttackPred](https://github.com/user-attachments/assets/da9488fb-b3df-4cd3-9be8-7b06417a2f39)
+
+![parameters1](https://github.com/user-attachments/assets/b32a9265-d1d3-4bb7-97c9-ff39dbc8b054)
+
+![parameter2](https://github.com/user-attachments/assets/a7ca6d71-b32e-4a9c-bf21-fa3eaf35b86f)
+
+![mail](https://github.com/user-attachments/assets/a5e93530-92a9-4a2c-86e1-058b09c687a2)
 
 
 [Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
