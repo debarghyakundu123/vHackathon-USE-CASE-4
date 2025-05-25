@@ -51,24 +51,22 @@ If heart failure risk is detected, the patient automatically receives a personal
 
 ## 📚 WHAT WE HAVE LEARNED
 
-Through the development of this heart failure readmission prediction project, we have gained key insights into the end-to-end process of building a clinical machine learning solution:
-
-**Data Integration & Preparation:**
+- **Data Integration & Preparation:**
 Combining multiple EHR sources (diagnoses, admissions, demographics, labs) is essential for constructing a comprehensive patient timeline and extracting meaningful features.
 
-**Label Engineering:**
+- **Label Engineering:**
 Careful definition and computation of the readmission label (within 30 days) is critical for clinically relevant modeling.
 
-**Feature Engineering:**
+- **Feature Engineering:**
 Incorporating demographics, comorbidities, and clinical measurements significantly enhances model performance and interpretability.
 
-**Model Training & Evaluation:**
-Tree-based models (RandomForest, XGBoost) provide robust performance for tabular clinical data, and systematic preprocessing (encoding, scaling) ensures reliable results.
+- **Model Training & Evaluation:**
+Tree-based models (RandomForest) provide robust performance for tabular clinical data, and systematic preprocessing (encoding, scaling) ensures reliable results.
 
-**Explainability:**
+- **Explainability:**
 Using SHAP values allows us to interpret model predictions, increasing transparency and trust—crucial in healthcare applications.
 
-**Deployment & Usability:**
+- **Deployment & Usability:**
 Streamlit enables rapid prototyping of user-friendly interfaces, making advanced ML models accessible to clinicians and stakeholders.
 
 
