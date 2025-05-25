@@ -3,29 +3,23 @@ import joblib
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+import os
 from fpdf import FPDF
 import base64
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
 
-from groq import Client
+import groq
 from dotenv import load_dotenv
-import os
-
-# Load environment variables
 load_dotenv()
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 
-# Streamlit page setup
+# --- 1. Page configuration (must be first Streamlit command) ---
 st.set_page_config(
     page_title="Heart Failure Prediction App",
     page_icon="🫀",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
 
 
 st.markdown("""
@@ -64,7 +58,7 @@ st.markdown("""
         }
     </style>
     <nav class="navbar" id="navbar">
-        <div class="logo">HealthPredict</div>
+        <div class="logo">ReAdmitIQ</div>
         <ul class="nav-links">
             <li><a href="https://readmissionsprediction.netlify.app/">Home</a></li>
             <li><a href="https://readmissionsprediction.netlify.app/splashs.html#features">Features</a></li>
@@ -224,10 +218,8 @@ with col1:
     st.markdown("#### 📝 Your Entered Parameters")
     st.dataframe(pd.DataFrame([user_input]).T.astype(str), use_container_width=True)
 
-
-
 def generate_ai_report(user_input):
-    client = Client(api_key=GROQ_API_KEY)
+    client = groq.Client(api_key="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")
     prompt = (
         f"Welcome. Please generate a formal, precise, and empathetic heart failure risk report for the following patient.\n\n"
         f"Patient Name: {st.session_state['user_name']}\n"
@@ -268,21 +260,32 @@ def report_to_pdf(report_text):
     return pdf.output(dest='S').encode('latin1', errors='replace')
 
 def send_email_sendgrid(pdf_content=None):
-    sg_api_key = os.getenv("SENDGRID_API_KEY")
-    if not sg_api_key:
-        st.error("SendGrid API key is not set in the environment variables.")
-        return
-    
+    from sendgrid import SendGridAPIClient
+    from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
+    import base64
+    import os
+    import streamlit as st
+
     from_email = "debarghyakundu319@gmail.com"  # Must be verified in SendGrid
-    recipient_email = st.session_state["user_email"]
+    recipient_email = st.session_state.get("user_email", "")
+    user_name = st.session_state.get("user_name", "User")
+
+    if not recipient_email:
+        st.error("Recipient email is not set.")
+        return False
 
     message = Mail(
         from_email=from_email,
         to_emails=recipient_email,
         subject="Heart Failure Risk Report",
-        plain_text_content=f"Dear {st.session_state['user_name']},\n\nAttached is your AI-generated heart failure risk report. Please consult your doctor."
+        plain_text_content=(
+            f"Dear {user_name},\n\n"
+            f"Attached is your AI-generated heart failure risk report. "
+            f"Please consult your doctor."
+        )
     )
 
+    # Add PDF attachment if provided
     if pdf_content is not None:
         encoded_pdf = base64.b64encode(pdf_content).decode()
         attachment = Attachment(
@@ -291,10 +294,10 @@ def send_email_sendgrid(pdf_content=None):
             FileType("application/pdf"),
             Disposition("attachment")
         )
-        message.attachment = attachment
+        message.add_attachment(attachment)  # ✅ Proper way to add attachment
 
     try:
-        sg = SendGridAPIClient(sg_api_key)
+        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
         response = sg.send(message)
         if response.status_code == 202:
             st.success(f"📧 Report sent to {recipient_email}")
@@ -303,7 +306,7 @@ def send_email_sendgrid(pdf_content=None):
             st.error(f"SendGrid error: {response.status_code} - {response.body}")
             return False
     except Exception as e:
-        st.error(f"Failed to send email: {e}")
+        st.error(f"Failed to send email: {str(e)}")
         return False
 
 with col2:
