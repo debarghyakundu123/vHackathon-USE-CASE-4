@@ -37,8 +37,17 @@ If heart failure risk is detected, the patient automatically receives a personal
 ![image](https://github.com/user-attachments/assets/ceedcdbc-61f9-4b42-84d6-8152ad3a368d)
 
 ## TECH STACK
+| **Layer**              | **Tools/Libraries**                         |
+|------------------------|---------------------------------------------|
+| Data Source            | MIMIC-III (PostgreSQL/CSV)                  |
+| Data Processing        | Python, pandas, numpy                       |
+| ML Modeling            | scikit-learn, XGBoost, joblib               |
+| Explainability         | SHAP                                        |
+| Visualization          | matplotlib, seaborn, plotly                 |
+| Web App                | Streamlit                                   |
+| Environment/Control    | conda/venv, git                             |
 
-![image](https://github.com/user-attachments/assets/874b8927-9f0e-47ba-a32e-78ca891eb153)
+
 
 ## 📚 WHAT WE HAVE LEARNED
 
