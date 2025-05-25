@@ -4,6 +4,5 @@ pandas
 numpy
 matplotlib
 fpdf
-base64
 sendgrid
 groq
