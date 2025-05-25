@@ -259,7 +259,7 @@ def report_to_pdf(report_text):
     return pdf.output(dest='S').encode('latin1', errors='replace')
 
 def send_email_sendgrid(pdf_content=None):
-    sg_api_key = "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"
+    sg_api_key = "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"
     from_email = "debarghyakundu319@gmail.com"  # Must be verified in SendGrid
     recipient_email = st.session_state["user_email"]
 
