@@ -1,12 +1,12 @@
-## Project Documentation: Predicting 30-Day Hospital Readmission Using Random Forest
 ## Readmission Prediction
 
 
 
 This project is an AI-powered heart failure prediction system designed for proactive patient care.
-It analyzes clinical and demographic data to accurately assess each patient’s risk of heart failure or readmission.By enabling early intervention, this tool aims to reduce hospitalizations and improve long-term heart health outcomes.
+It analyzes clinical and demographic data to accurately assess each patient’s risk of heart failure or readmission. By enabling early intervention, this tool aims to reduce hospitalizations and improve long-term heart health outcomes.
 
-
+This project is developed as part of the Veersa Technologies Hackathon competition with the aim of transforming healthcare through technological innovation. 
+The submission is made by students of Maharaja Surajmal Institute of Technology, New Delhi.
 
 **live demo  = https://readmissionpredictionforheartfailurepatients.streamlit.app/**
 
@@ -17,7 +17,7 @@ It analyzes clinical and demographic data to accurately assess each patient’s 
 1. Personalized AI-Generated Risk Reports
 Uses the latest LLM (Groq/LLAMA-3) to generate a custom, empathetic, and actionable report for each patient.
 
-2. One-Click PDF Generation and Email Delivery
+2. One-Click PDF Generation 
 Instantly converts the AI report into a professional PDF.
 
 3. Dynamic Patient Profile Visualization
