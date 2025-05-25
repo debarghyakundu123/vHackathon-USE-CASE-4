@@ -49,7 +49,7 @@ If heart failure risk is detected, the patient automatically receives a personal
 
 
 
-## 📚 WHAT WE HAVE LEARNED
+## WHAT WE HAVE LEARNED
 
 - **Data Integration & Preparation:**
 Combining multiple EHR sources (diagnoses, admissions, demographics, labs) is essential for constructing a comprehensive patient timeline and extracting meaningful features.
@@ -94,7 +94,7 @@ Streamlit enables rapid prototyping of user-friendly interfaces, making advanced
 
 [Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
 
-## 🚀 Future Optimization
+##  Future Optimization
 
 To further enhance the accuracy, usability, and impact of this heart failure readmission prediction project, we have identified several promising directions for future optimization:
 
@@ -117,6 +117,8 @@ Incorporate additional interpretability tools (e.g., LIME, counterfactual explan
 Set up pipelines for periodic retraining and updating of the model as new data becomes available.
 
 
+
+##  Testing 
 
 
 
