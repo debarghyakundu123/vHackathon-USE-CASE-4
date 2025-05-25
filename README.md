@@ -72,25 +72,31 @@ Streamlit enables rapid prototyping of user-friendly interfaces, making advanced
 
 ## Screenshots
 
-![Screenshot 2025-05-25 141040](https://github.com/user-attachments/assets/926d26e9-e7f8-4abd-a414-2375dcb8c0cb)
+![homepage](https://github.com/user-attachments/assets/6d14263d-e198-451e-b32d-7abbdce8eeea)
 
-![Screenshot 2025-05-25 141156](https://github.com/user-attachments/assets/0812cfd0-42fd-411b-8529-9c0bfc9b8f65)
+![features](https://github.com/user-attachments/assets/1755b6ee-4588-4570-a281-c82d1e7ee7c9)
 
-![Screenshot 2025-05-25 143623](https://github.com/user-attachments/assets/a9660d26-51ae-4754-a3aa-570bc407c862)
+![features 2](https://github.com/user-attachments/assets/bee25997-5ffd-4c76-9242-f3471249dfb5)
 
-![Screenshot 2025-05-25 141804](https://github.com/user-attachments/assets/87e43628-d02a-4588-8a7a-cadfe22af572)
+![about features](https://github.com/user-attachments/assets/26d179ae-ee1b-4d4b-bae5-b17715932dfd)
 
-![Screenshot 2025-05-25 141831](https://github.com/user-attachments/assets/5f913665-2e2e-4d9d-972b-05d6cb280cc9)
+![unfilleddeets](https://github.com/user-attachments/assets/557efc52-20d2-42dd-b7a4-f7a044a8641d)
 
-![Screenshot 2025-05-25 141924](https://github.com/user-attachments/assets/c7c7828e-b60c-454c-885b-b57fe1ad86bd)
+![userDetails](https://github.com/user-attachments/assets/e565ce93-4cd9-45ff-b867-9f3a830655a9)
 
-![Screenshot 2025-05-25 141951](https://github.com/user-attachments/assets/2e43c5aa-15c3-4261-97e7-32d533eac55d)
+![noDeetsPredPage](https://github.com/user-attachments/assets/c82ea72e-b19a-4319-ba29-c354b44b736c)
 
-![Screenshot 2025-05-25 142401](https://github.com/user-attachments/assets/6020bffa-7cee-4667-ac75-b3fc6c9d4469)
+![unfilleddeets2](https://github.com/user-attachments/assets/6dda5531-4a60-4a93-8f9a-148c715904a7)
 
-![Screenshot 2025-05-25 142435](https://github.com/user-attachments/assets/9934018c-f615-4991-a97f-10511fa40763)
+![noHeartAttack1](https://github.com/user-attachments/assets/ff36425a-48b2-4bf1-8563-0b19be6dc607)
 
-![Screenshot 2025-05-25 143203](https://github.com/user-attachments/assets/e7a100b5-f8bb-46dc-8e82-d6fdf9a95752)
+![noHeartAttack2](https://github.com/user-attachments/assets/33865fb7-77a6-46f8-a7b6-343a09d10e8a)
+
+![noHeartAttackPred](https://github.com/user-attachments/assets/d7ac541f-0152-448c-990e-5f102d9f1aa9)
+
+
+
+
 
 [Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
 
