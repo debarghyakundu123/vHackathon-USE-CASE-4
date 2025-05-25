@@ -1,4 +1,4 @@
-**Project Documentation: Predicting 30-Day Hospital Readmission Using Random Forest**
+## Project Documentation: Predicting 30-Day Hospital Readmission Using Random Forest
 
 **live demo  = https://readmissionpredictionforheartfailurepatients.streamlit.app/**
 
