@@ -76,39 +76,24 @@ Streamlit enables rapid prototyping of user-friendly interfaces, making advanced
 
 ## Screenshots
 
-![homepage](https://github.com/user-attachments/assets/6d14263d-e198-451e-b32d-7abbdce8eeea)
+<img src="https://github.com/user-attachments/assets/6d14263d-e198-451e-b32d-7abbdce8eeea" width="200">
+<img src="https://github.com/user-attachments/assets/1755b6ee-4588-4570-a281-c82d1e7ee7c9" width="200">
+<img src="https://github.com/user-attachments/assets/bee25997-5ffd-4c76-9242-f3471249dfb5" width="200">
+<img src="https://github.com/user-attachments/assets/26d179ae-ee1b-4d4b-bae5-b17715932dfd" width="200">
+<img src="https://github.com/user-attachments/assets/557efc52-20d2-42dd-b7a4-f7a044a8641d" width="200">
+<img src="https://github.com/user-attachments/assets/e565ce93-4cd9-45ff-b867-9f3a830655a9" width="200">
+<img src="https://github.com/user-attachments/assets/c82ea72e-b19a-4319-ba29-c354b44b736c" width="200">
+<img src="https://github.com/user-attachments/assets/6dda5531-4a60-4a93-8f9a-148c715904a7" width="200">
+<img src="https://github.com/user-attachments/assets/ff36425a-48b2-4bf1-8563-0b19be6dc607" width="200">
+<img src="https://github.com/user-attachments/assets/33865fb7-77a6-46f8-a7b6-343a09d10e8a" width="200">
+<img src="https://github.com/user-attachments/assets/d7ac541f-0152-448c-990e-5f102d9f1aa9" width="200">
+<img src="https://github.com/user-attachments/assets/0ca68950-509d-4704-84de-47391bd4045d" width="200">
+<img src="https://github.com/user-attachments/assets/0769293c-36d2-4d7c-b487-355fbb1fa0da" width="200">
+<img src="https://github.com/user-attachments/assets/da9488fb-b3df-4cd3-9be8-7b06417a2f39" width="200">
+<img src="https://github.com/user-attachments/assets/b32a9265-d1d3-4bb7-97c9-ff39dbc8b054" width="200">
+<img src="https://github.com/user-attachments/assets/a7ca6d71-b32e-4a9c-bf21-fa3eaf35b86f" width="200">
+<img src="https://github.com/user-attachments/assets/a5e93530-92a9-4a2c-86e1-058b09c687a2" width="200">
 
-![features](https://github.com/user-attachments/assets/1755b6ee-4588-4570-a281-c82d1e7ee7c9)
-
-![features 2](https://github.com/user-attachments/assets/bee25997-5ffd-4c76-9242-f3471249dfb5)
-
-![about features](https://github.com/user-attachments/assets/26d179ae-ee1b-4d4b-bae5-b17715932dfd)
-
-![unfilleddeets](https://github.com/user-attachments/assets/557efc52-20d2-42dd-b7a4-f7a044a8641d)
-
-![userDetails](https://github.com/user-attachments/assets/e565ce93-4cd9-45ff-b867-9f3a830655a9)
-
-![noDeetsPredPage](https://github.com/user-attachments/assets/c82ea72e-b19a-4319-ba29-c354b44b736c)
-
-![unfilleddeets2](https://github.com/user-attachments/assets/6dda5531-4a60-4a93-8f9a-148c715904a7)
-
-![noHeartAttack1](https://github.com/user-attachments/assets/ff36425a-48b2-4bf1-8563-0b19be6dc607)
-
-![noHeartAttack2](https://github.com/user-attachments/assets/33865fb7-77a6-46f8-a7b6-343a09d10e8a)
-
-![noHeartAttackPred](https://github.com/user-attachments/assets/d7ac541f-0152-448c-990e-5f102d9f1aa9)
-
-![heartAttack1](https://github.com/user-attachments/assets/0ca68950-509d-4704-84de-47391bd4045d)
-
-![heartAttack2](https://github.com/user-attachments/assets/0769293c-36d2-4d7c-b487-355fbb1fa0da)
-
-![heartAttackPred](https://github.com/user-attachments/assets/da9488fb-b3df-4cd3-9be8-7b06417a2f39)
-
-![parameters1](https://github.com/user-attachments/assets/b32a9265-d1d3-4bb7-97c9-ff39dbc8b054)
-
-![parameter2](https://github.com/user-attachments/assets/a7ca6d71-b32e-4a9c-bf21-fa3eaf35b86f)
-
-![mail](https://github.com/user-attachments/assets/a5e93530-92a9-4a2c-86e1-058b09c687a2)
 
 
 [Personalized_Heart_Failure_Report.pdf](https://github.com/user-attachments/files/20430123/Personalized_Heart_Failure_Report.pdf)
