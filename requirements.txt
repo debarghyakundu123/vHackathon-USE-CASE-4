@@ -7,4 +7,5 @@ fpdf
 sendgrid
 groq
 python-dotenv
-sklearn
+scikit-learn
+
